@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {NbMenuService} from "@nebular/theme";
 import {Router} from "@angular/router";
 
 import { MENU_ITEMS } from './pages-menu';

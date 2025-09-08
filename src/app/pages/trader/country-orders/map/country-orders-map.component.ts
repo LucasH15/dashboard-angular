@@ -7,7 +7,6 @@ import { NbThemeService } from '@nebular/theme';
 import { combineLatest } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 
-
 @Component({
   selector: 'ngx-country-orders-map',
   styleUrls: ['./country-orders-map.component.scss'],
