@@ -19,29 +19,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'UI Features',
-    icon: 'keypad-outline',
-    link: '/ui-features',
-    children: [
-      {
-        title: 'Grid',
-        link: '/ui-features/grid',
-      },
-      {
-        title: 'Icons',
-        link: '/ui-features/icons',
-      },
-      {
-        title: 'Typography',
-        link: '/ui-features/typography',
-      },
-      {
-        title: 'Animated Searches',
-        link: '/ui-features/search-fields',
-      },
-    ],
-  },
-  {
     title: 'Modal & Overlays',
     icon: 'browser-outline',
     children: [
