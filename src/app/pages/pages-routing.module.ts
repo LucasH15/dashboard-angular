@@ -2,8 +2,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ECommerceComponent } from './e-commerce/e-commerce.component';
+import { TraderComponent } from './trader/trader.component';
+import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 
 const routes: Routes = [{
@@ -11,12 +11,14 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
-      path: 'dashboard',
-      component: ECommerceComponent,
+      path: '',
+      component: HomeComponent,
+      pathMatch: 'full'
     },
     {
-      path: 'iot-dashboard',
-      component: DashboardComponent,
+      path: 'trader',
+      component: TraderComponent,
+      pathMatch: 'full'
     },
     {
       path: 'layout',
@@ -67,11 +69,6 @@ const routes: Routes = [{
       path: 'miscellaneous',
       loadChildren: () => import('./miscellaneous/miscellaneous.module')
         .then(m => m.MiscellaneousModule),
-    },
-    {
-      path: '',
-      redirectTo: 'dashboard',
-      pathMatch: 'full',
     },
     {
       path: '**',

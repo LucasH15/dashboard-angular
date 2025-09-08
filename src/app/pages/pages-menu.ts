@@ -4,13 +4,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Accueil',
     icon: 'home-outline',
-    link: '/pages/dashboard',
-    home: true,
+    link: '/',
+    pathMatch: 'full',
+    home: true
   },
   {
-    title: 'IoT Dashboard',
-    icon: 'home-outline',
-    link: '/pages/iot-dashboard',
+    title: 'Trader',
+    icon: 'pie-chart-outline',
+    link: '/trader',
+    pathMatch: 'full'
   },
   {
     title: 'FEATURES',
