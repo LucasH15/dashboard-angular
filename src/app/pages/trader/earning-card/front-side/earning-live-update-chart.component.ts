@@ -3,8 +3,6 @@ import { AfterViewInit, Component, Input, OnChanges, OnDestroy } from '@angular/
 import { NbThemeService } from '@nebular/theme';
 import * as echarts from "echarts";
 
-import { LayoutService } from '../../../../@core/utils';
-
 @Component({
   selector: 'ngx-earning-live-update-chart',
   styleUrls: ['earning-card-front.component.scss'],
@@ -23,13 +21,7 @@ export class EarningLiveUpdateChartComponent implements AfterViewInit, OnDestroy
   option: any;
   echartsInstance;
 
-  constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
-    this.layoutService.onSafeChangeLayoutSize()
-      .pipe(
-        takeWhile(() => this.alive),
-      )
-      .subscribe(() => this.resizeChart());
+  constructor(private theme: NbThemeService) {
   }
 
   ngOnChanges(): void {

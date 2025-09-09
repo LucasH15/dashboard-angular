@@ -5,4 +5,21 @@
       margin-right: -10px;
     }
   }
+
+  .row {
+    --bs-gutter-x: 10px;
+    --bs-gutter-y: 10px;
+
+    + .row {
+      margin-top: var(--bs-gutter-y);
+    }
+  }
+
+  .nb-theme-default nb-layout .layout {
+    background: linear-gradient(126deg, rgba(#ffffff, 0.9) 0%, rgba(#3366ff, 0.9) 80%);
+  }
+
+  .nb-theme-dark nb-layout .layout {
+    background: linear-gradient(126deg, rgba(#222b45, 0.9) 0%, rgba(#3366ff, 0.9) 80%);
+  }
 }

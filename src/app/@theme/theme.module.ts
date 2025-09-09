@@ -5,16 +5,16 @@ import {
   NbLayoutModule,
   NbMenuModule,
   NbSearchModule,
-  NbSidebarModule,
   NbUserModule,
   NbContextMenuModule,
   NbButtonModule,
   NbSelectModule,
   NbIconModule,
-  NbThemeModule,
+  NbThemeModule, NbButtonGroupModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
+import { RouterLink, RouterLinkActive } from "@angular/router";
 
 import { HeaderComponent } from './components';
 import {
@@ -24,27 +24,11 @@ import {
   TimingPipe,
   NumberWithCommasPipe,
 } from './pipes';
-import { LayoutComponent } from './layouts/layout';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { DARK_THEME } from './styles/theme.dark';
 
-const NB_MODULES = [
-  NbLayoutModule,
-  NbMenuModule,
-  NbUserModule,
-  NbActionsModule,
-  NbSearchModule,
-  NbSidebarModule,
-  NbContextMenuModule,
-  NbSecurityModule,
-  NbButtonModule,
-  NbSelectModule,
-  NbIconModule,
-  NbEvaIconsModule,
-];
 const COMPONENTS = [
-  HeaderComponent,
-  LayoutComponent
+  HeaderComponent
 ];
 const PIPES = [
   CapitalizePipe,
@@ -55,7 +39,23 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, ...NB_MODULES],
+  imports: [
+    CommonModule,
+    NbLayoutModule,
+    NbMenuModule,
+    NbUserModule,
+    NbActionsModule,
+    NbSearchModule,
+    NbContextMenuModule,
+    NbSecurityModule,
+    NbButtonModule,
+    NbButtonGroupModule,
+    NbSelectModule,
+    NbIconModule,
+    NbEvaIconsModule,
+    RouterLinkActive,
+    RouterLink
+  ],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
   declarations: [...COMPONENTS, ...PIPES],
 })

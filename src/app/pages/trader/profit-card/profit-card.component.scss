@@ -5,8 +5,6 @@
     position: absolute;
     right: 0.625rem;
     top: 1rem;
-    @include nb-rtl(right, auto);
-    @include nb-rtl(left, 0.625rem);
     cursor: pointer;
   }
 

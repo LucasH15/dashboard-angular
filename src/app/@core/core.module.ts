@@ -5,11 +5,7 @@ import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
 
 import { throwIfAlreadyLoaded } from './module-import-guard';
-import {
-  LayoutService,
-  PlayerService
-} from './utils';
-import { UserData } from './data/users';
+import { PlayerService } from './utils';
 import { ElectricityData } from './data/electricity';
 import { SmartTableData } from './data/smart-table';
 import { UserActivityData } from './data/user-activity';
@@ -28,7 +24,6 @@ import { StatsProgressBarData } from './data/stats-progress-bar';
 import { VisitorsAnalyticsData } from './data/visitors-analytics';
 import { SecurityCamerasData } from './data/security-cameras';
 
-import { UserService } from './mock/users.service';
 import { ElectricityService } from './mock/electricity.service';
 import { SmartTableService } from './mock/smart-table.service';
 import { UserActivityService } from './mock/user-activity.service';
@@ -48,26 +43,8 @@ import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { MockDataModule } from './mock/mock-data.module';
 
-const socialLinks = [
-  {
-    url: 'https://github.com/akveo/nebular',
-    target: '_blank',
-    icon: 'github',
-  },
-  {
-    url: 'https://www.facebook.com/akveo/',
-    target: '_blank',
-    icon: 'facebook',
-  },
-  {
-    url: 'https://twitter.com/akveo_inc',
-    target: '_blank',
-    icon: 'twitter',
-  },
-];
 
 const DATA_SERVICES = [
-  { provide: UserData, useClass: UserService },
   { provide: ElectricityData, useClass: ElectricityService },
   { provide: SmartTableData, useClass: SmartTableService },
   { provide: UserActivityData, useClass: UserActivityService },
@@ -104,15 +81,7 @@ export const NB_CORE_PROVIDERS = [
         name: 'email',
         delay: 3000,
       }),
-    ],
-    forms: {
-      login: {
-        socialLinks: socialLinks,
-      },
-      register: {
-        socialLinks: socialLinks,
-      },
-    },
+    ]
   }).providers,
 
   NbSecurityModule.forRoot({
@@ -132,7 +101,6 @@ export const NB_CORE_PROVIDERS = [
   {
     provide: NbRoleProvider, useClass: NbSimpleRoleProvider,
   },
-  LayoutService,
   PlayerService,
 ];
 

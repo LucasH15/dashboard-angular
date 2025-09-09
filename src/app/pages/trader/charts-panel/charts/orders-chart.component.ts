@@ -4,7 +4,6 @@ import { delay, takeWhile } from 'rxjs/operators';
 import * as echarts from "echarts";
 
 import { OrdersChart } from '../../../../@core/data/orders-chart';
-import { LayoutService } from '../../../../@core/utils';
 
 @Component({
   selector: 'ngx-orders-chart',
@@ -34,13 +33,7 @@ export class OrdersChartComponent implements AfterViewInit, OnDestroy, OnChanges
     }
   }
 
-  constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
-    this.layoutService.onSafeChangeLayoutSize()
-      .pipe(
-        takeWhile(() => this.alive),
-      )
-      .subscribe(() => this.resizeChart());
+  constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit(): void {

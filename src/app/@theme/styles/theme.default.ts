@@ -310,5 +310,5 @@ export const DEFAULT_THEME = {
       tooltipBorderWidth: '1',
       tooltipExtraCss: 'border-radius: 10px; padding: 4px 16px;',
     },
-  },
+  }
 } as NbJSThemeOptions;

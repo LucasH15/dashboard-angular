@@ -3,8 +3,6 @@ import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 import * as echarts from "echarts";
 
-import { LayoutService } from '../../../../@core/utils';
-
 @Component({
   selector: 'ngx-country-orders-chart',
   styleUrls: ['./country-orders-chart.component.scss'],
@@ -32,13 +30,7 @@ export class CountryOrdersChartComponent implements OnDestroy, OnChanges {
   option: any = {};
   echartsInstance;
 
-  constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
-    this.layoutService.onSafeChangeLayoutSize()
-      .pipe(
-        takeWhile(() => this.alive),
-      )
-      .subscribe(() => this.resizeChart());
+  constructor(private theme: NbThemeService) {
   }
 
   ngOnChanges(changes: SimpleChanges): void {

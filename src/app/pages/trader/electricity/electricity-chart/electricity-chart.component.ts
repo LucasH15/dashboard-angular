@@ -3,7 +3,6 @@ import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import * as echarts from "echarts";
 
-import { LayoutService } from '../../../../@core/utils';
 import { ElectricityChart } from '../../../../@core/data/electricity';
 
 @Component({
@@ -27,13 +26,7 @@ export class ElectricityChartComponent implements AfterViewInit, OnDestroy {
   option: any;
   echartsIntance: any;
 
-  constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
-    this.layoutService.onSafeChangeLayoutSize()
-      .pipe(
-        takeWhile(() => this.alive),
-      )
-      .subscribe(() => this.resizeChart());
+  constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit(): void {

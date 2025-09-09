@@ -63,12 +63,9 @@ import { EarningCardBackComponent } from './earning-card/back-side/earning-card-
 import { EarningPieChartComponent } from './earning-card/back-side/earning-pie-chart.component';
 import { EarningCardFrontComponent } from './earning-card/front-side/earning-card-front.component';
 import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earning-live-update-chart.component';
-import { TemperatureComponent } from './temperature/temperature.component';
-import { TemperatureDraggerComponent } from './temperature/temperature-dragger/temperature-dragger.component';
 import { ElectricityComponent } from './electricity/electricity.component';
 import { ElectricityChartComponent } from './electricity/electricity-chart/electricity-chart.component';
 import { WeatherComponent } from './weather/weather.component';
-import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   imports: [
@@ -121,12 +118,9 @@ import { PlayerComponent } from './player/player.component';
     EarningCardBackComponent,
     EarningPieChartComponent,
     EarningLiveUpdateChartComponent,
-    TemperatureComponent,
-    TemperatureDraggerComponent,
     ElectricityComponent,
     ElectricityChartComponent,
-    WeatherComponent,
-    PlayerComponent
+    WeatherComponent
   ],
   providers: [
     CountryOrdersMapService,

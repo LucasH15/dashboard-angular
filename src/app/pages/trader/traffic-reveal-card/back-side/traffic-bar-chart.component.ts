@@ -3,8 +3,6 @@ import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 import * as echarts from "echarts";
 
-import { LayoutService } from '../../../../@core/utils';
-
 @Component({
   selector: 'ngx-traffic-bar-chart',
   template: `
@@ -26,13 +24,7 @@ export class TrafficBarChartComponent implements AfterViewInit, OnDestroy, OnCha
   option: any = {};
   echartsInstance: any;
 
-  constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
-    this.layoutService.onSafeChangeLayoutSize()
-      .pipe(
-        takeWhile(() => this.alive),
-      )
-      .subscribe(() => this.resizeChart());
+  constructor(private theme: NbThemeService) {
   }
 
   onChartInit(ec) {

@@ -3,8 +3,6 @@ import { NbThemeService } from '@nebular/theme';
 import { delay, takeWhile } from 'rxjs/operators';
 import * as echarts from "echarts";
 
-import { LayoutService } from '../../../../@core/utils';
-
 @Component({
   selector: 'ngx-visitors-statistics',
   styleUrls: ['./visitors-statistics.component.scss'],
@@ -20,13 +18,7 @@ export class ECommerceVisitorsStatisticsComponent implements AfterViewInit, OnDe
   chartLegend: { iconColor: string; title: string }[];
   echartsIntance: any;
 
-  constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
-    this.layoutService.onSafeChangeLayoutSize()
-      .pipe(
-        takeWhile(() => this.alive),
-      )
-      .subscribe(() => this.resizeChart());
+  constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit() {

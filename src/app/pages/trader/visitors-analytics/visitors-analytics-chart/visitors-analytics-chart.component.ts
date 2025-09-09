@@ -3,7 +3,6 @@ import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import * as echarts from "echarts";
 
-import { LayoutService } from '../../../../@core/utils';
 import { OutlineData } from '../../../../@core/data/visitors-analytics';
 
 @Component({
@@ -28,16 +27,9 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
   };
 
   option: any;
-  themeSubscription: any;
   echartsIntance: any;
 
-  constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
-    this.layoutService.onSafeChangeLayoutSize()
-      .pipe(
-        takeWhile(() => this.alive),
-      )
-      .subscribe(() => this.resizeChart());
+  constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit(): void {

@@ -73,7 +73,7 @@ export const DARK_THEME = {
     },
 
     bubbleMap: {
-      titleColor: baseThemeVariables["fgText"],
+      titleColor: baseThemeVariables.fgText,
       areaColor: baseThemeVariables["bg4"],
       areaHoverColor: baseThemeVariables["fgHighlight"],
       areaBorderColor: baseThemeVariables["border5"],

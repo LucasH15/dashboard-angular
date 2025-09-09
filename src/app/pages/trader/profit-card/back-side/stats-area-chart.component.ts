@@ -3,8 +3,6 @@ import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import * as echarts from "echarts";
 
-import { LayoutService } from '../../../../@core/utils';
-
 @Component({
   selector: 'ngx-stats-ares-chart',
   styleUrls: ['stats-card-back.component.scss'],
@@ -24,13 +22,7 @@ export class StatsAreaChartComponent implements AfterViewInit, OnDestroy {
   echartsIntance: any;
   option: any = {};
 
-  constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
-    this.layoutService.onSafeChangeLayoutSize()
-      .pipe(
-        takeWhile(() => this.alive),
-      )
-      .subscribe(() => this.resizeChart());
+  constructor(private theme: NbThemeService) {
   }
 
   ngAfterViewInit() {

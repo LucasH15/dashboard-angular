@@ -5,6 +5,10 @@ $legend-payment-color: #6935ca;
 $legend-canceled-color: #3f4fda;
 
 @include nb-install-component() {
+  nb-card {
+    height: 100%;
+    max-height: 565px;
+  }
 
   nb-tabset {
     display: flex;

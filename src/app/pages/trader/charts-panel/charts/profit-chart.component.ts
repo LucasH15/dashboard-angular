@@ -4,7 +4,6 @@ import { takeWhile } from 'rxjs/operators';
 import * as echarts from "echarts";
 
 import { ProfitChart } from '../../../../@core/data/profit-chart';
-import { LayoutService } from '../../../../@core/utils';
 
 @Component({
   selector: 'ngx-profit-chart',
@@ -23,13 +22,7 @@ export class ProfitChartComponent implements AfterViewInit, OnDestroy, OnChanges
   echartsIntance: any;
   options: any = {};
 
-  constructor(private theme: NbThemeService,
-              private layoutService: LayoutService) {
-    this.layoutService.onSafeChangeLayoutSize()
-      .pipe(
-        takeWhile(() => this.alive),
-      )
-      .subscribe(() => this.resizeChart());
+  constructor(private theme: NbThemeService) {
   }
 
   ngOnChanges(): void {

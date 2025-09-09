@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
+import { NbAlertModule } from "@nebular/theme";
 
 import { HomeComponent } from './home.component';
 
 @NgModule({
-  declarations: [
-    HomeComponent,
+  imports: [
+    NbAlertModule
   ],
+  declarations: [
+    HomeComponent
+  ]
 })
 export class HomeModule { }
